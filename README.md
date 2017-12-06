@@ -22,3 +22,31 @@ Simple web application to quickstart with [Laravel](https://laravel.com/) 5.5 an
 1. Install AngularJS
 
     `npm install --save angular`
+
+## Development Environments with [Homestead](https://laravel.com/docs/5.5/homestead)
+
+1. Install
+
+    ```sh
+    composer require --dev laravel/homestead
+    ```
+
+1. Create homestead configuration
+
+    ```sh
+    php vendor/bin/homestead make
+    ```
+
+    or
+
+    ```sh
+    ./vendor/bin/homestead make
+    ```
+
+1. Run [Vagrant](https://www.vagrantup.com/)
+
+    Edit `Homestead.yaml`
+
+    ```sh
+    vagrant up
+    ```
