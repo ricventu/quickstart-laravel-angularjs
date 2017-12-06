@@ -2,7 +2,7 @@
 
 Simple web application to quickstart with [Laravel](https://laravel.com/) 5.5 and [AngularJS](https://angularjs.org/) 1.x with [Bootstrap](https://getbootstrap.com/docs/3.3/) 3.3
 
-## How-to build from scratch
+## Build from scratch
 
 1. Create Laravel project using [Composer](https://getcomposer.org/)
 
@@ -22,3 +22,11 @@ Simple web application to quickstart with [Laravel](https://laravel.com/) 5.5 an
 1. Install AngularJS
 
     `npm install --save angular`
+
+## API Authentication
+
+1. Install [Laravel Passport](https://laravel.com/docs/5.5/passport#introduction)
+
+        `composer require laravel/passport`
+
+    
