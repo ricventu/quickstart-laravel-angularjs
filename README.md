@@ -1,6 +1,6 @@
 # quickstart-laravel-angularjs
 
-Simple web application to quickstart with [Laravel](https://laravel.com/) 5.5 and [AngularJS](https://angularjs.org/) 1.x
+Simple web application to quickstart with [Laravel](https://laravel.com/) 5.5 and [AngularJS](https://angularjs.org/) 1.x with [Bootstrap](https://getbootstrap.com/docs/3.3/) 3.3
 
 ## How-to build from scratch
 
@@ -8,6 +8,14 @@ Simple web application to quickstart with [Laravel](https://laravel.com/) 5.5 an
 
     `composer create-project laravel/laravel <folder name> 5.5.*`
 
-1. Install front-end dipendencies using [npm](https://www.npmjs.com/)
+1. Removing the Frontend Scaffolding but keep Bootstrap
+
+    `php artisan preset none`
+    `php artisan preset bootstrap`
+
+    _note_: in package.json change "jquery": "^3.1.1" to "jquery": "^3.2"
+
+1. Install the Frontend dipendencies using [npm](https://www.npmjs.com/)
 
     `npm install`
+
