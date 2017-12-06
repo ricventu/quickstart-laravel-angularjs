@@ -19,3 +19,6 @@ Simple web application to quickstart with [Laravel](https://laravel.com/) 5.5 an
 
     `npm install`
 
+1. Install AngularJS
+
+    `npm install --save angular`
