@@ -25,9 +25,20 @@ Simple web application to quickstart with [Laravel](https://laravel.com/) 5.5 an
 
 ## API Authentication
 
-1. Install [Laravel Passport](https://laravel.com/docs/5.5/passport#introduction)
+1. Install [Laravel Passport](https://laravel.com/docs/5.5/passport)
 
-    `composer require laravel/passport`
+    ```sh
+    composer require laravel/passport`
+    ```
+
+1. Configure in Homestead
+
+    ```sh
+    vagrant ssh
+    cd code
+    php artisan migrate
+    php artisan passport:install
+    ```
 
 ## Development Environments with Homestead and Browsersync
 
