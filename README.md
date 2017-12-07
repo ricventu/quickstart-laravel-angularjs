@@ -23,7 +23,7 @@ Simple web application to quickstart with [Laravel](https://laravel.com/) 5.5 an
 
     `npm install --save angular`
 
-## Development Environments with Homestead
+## Development Environments with Homestead and Browsersync
 
 1. Install [Homestead](https://laravel.com/docs/5.5/homestead)
 
@@ -43,10 +43,43 @@ Simple web application to quickstart with [Laravel](https://laravel.com/) 5.5 an
     ./vendor/bin/homestead make
     ```
 
-1. Run [Vagrant](https://www.vagrantup.com/)
+1. Edit `Homestead.yaml`
 
-    Edit `Homestead.yaml`
+    Edit ip, memory and site map:
+
+    ```yaml
+    ip: 192.168.56.111
+    memory: 512
+    ...
+    sites:
+        -
+            map: laravel-angular.test
+    ```
+
+1. Edit `webpack.mix.js`
+
+    Add:
+
+    ```js
+    // Versioning / Cache Busting
+    if (mix.inProduction()) {
+        mix.version();
+    }
+
+    //Browsersync Reloading
+    mix.browserSync('laravel-angular.test'); //homestead site map
+    ```
+
+1. Run
+
+    run [Vagrant](https://www.vagrantup.com/)
 
     ```sh
     vagrant up
+    ```
+
+    run [Browsersync](https://www.browsersync.io/)
+
+    ```sh
+    npm run watch
     ```

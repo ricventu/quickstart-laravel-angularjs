@@ -13,3 +13,12 @@ let mix = require('laravel-mix');
 
 mix.js('resources/assets/js/app.js', 'public/js')
    .sass('resources/assets/sass/app.scss', 'public/css');
+
+
+// Versioning / Cache Busting
+if (mix.inProduction()) {
+  mix.version();
+}
+
+//Browsersync Reloading
+mix.browserSync('laravel-angular.test'); //homestead site map
