@@ -23,9 +23,9 @@ Simple web application to quickstart with [Laravel](https://laravel.com/) 5.5 an
 
     `npm install --save angular`
 
-## Development Environments with [Homestead](https://laravel.com/docs/5.5/homestead)
+## Development Environments with Homestead
 
-1. Install
+1. Install [Homestead](https://laravel.com/docs/5.5/homestead)
 
     ```sh
     composer require --dev laravel/homestead
