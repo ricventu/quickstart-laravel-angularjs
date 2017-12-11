@@ -4,12 +4,14 @@ namespace Tests\Feature;
 
 use Tests\TestCase;
 use Illuminate\Foundation\Testing\WithFaker;
-use Illuminate\Foundation\Testing\RefreshDatabase;
+use Illuminate\Foundation\Testing\DatabaseTransactions;
 
 use Laravel\Passport\Passport;
 
 class ApiTest extends TestCase
 {
+    use DatabaseTransactions;
+
     /**
      * A basic test example.
      *
@@ -17,13 +19,11 @@ class ApiTest extends TestCase
      */
     public function testGetUser()
     {
-        Passport::actingAs(
-            factory(\App\User::class)->create(),
-            ['*']
-        );
+        $user = factory(\App\User::class)->create();
+        Passport::actingAs($user, ['*']);
     
         $response = $this->get('/api/user');
-    
-        $response->assertStatus(200);
+
+        $response->assertStatus(200)->assertJson($user->toArray());
     }
 }
