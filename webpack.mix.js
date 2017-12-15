@@ -12,8 +12,9 @@ let mix = require('laravel-mix');
  */
 
 mix.js('resources/assets/js/app.js', 'public/js')
-   .sass('resources/assets/sass/app.scss', 'public/css');
-
+   .sass('resources/assets/sass/app.scss', 'public/css')
+   .copyDirectory('resources/assets/partials', 'public/partials');
+   
 
 // Versioning / Cache Busting
 if (mix.inProduction()) {
@@ -21,4 +22,13 @@ if (mix.inProduction()) {
 }
 
 //Browsersync Reloading
-mix.browserSync('laravel-angular.test'); //homestead site map
+mix.browserSync({
+proxy: 'laravel-angular.test', //homestead site map
+files: [ // files to watch
+  'app/**/*.php',
+  'resources/views/**/*.php',
+  'public/js/**/*.js',
+  'public/css/**/*.css',
+  'public/partials/**/*.html'
+]
+});
