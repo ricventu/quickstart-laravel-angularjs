@@ -15,12 +15,14 @@ import appConfig from './config';
 import appRouter from './router';
 import navComponent from './components/nav';
 import LoginController from './controllers/login';
+import ApiService from './services/api';
 
 let app = angular.module('app', ['angular-oauth2', 'ui.router']);
 
 app.config(appConfig);
 app.config(appRouter);
 
+app.service('ApiService', ApiService);
 app.component('laNav', navComponent);
 app.controller('LoginController', LoginController);
 

@@ -13,7 +13,7 @@
         <a href ui-sref="login"><span class="glyphicon glyphicon-log-in"></span> Login</a>
       </li>
       <li ng-if="$ctrl.isAuthenticated()">
-        <a><span class="glyphicon glyphicon-user"></span> {{$ctrl.username}}</a>
+        <a><span class="glyphicon glyphicon-user"></span> {{$ctrl.user.name}}</a>
       </li>
       <li ng-if="$ctrl.isAuthenticated()">
         <a href ng-click="$ctrl.logout()"><span class="glyphicon glyphicon-log-out"></span> Logout</a>
