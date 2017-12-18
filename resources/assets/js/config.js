@@ -9,12 +9,15 @@ function appConfig(OAuthProvider, OAuthTokenProvider) {
     revokePath: '/oauth/token/revoke'
   });
 
-  OAuthTokenProvider.configure({
-    name: 'token',
-    options: {
-      secure: false
-    }
-  })
+  if (location.protocol != 'https:') {
+    console.warn("disabling oauth token secure");
+    OAuthTokenProvider.configure({
+      name: 'token',
+      options: {
+        secure: false
+      }
+    });
+  }
 }
 
 export default appConfig;

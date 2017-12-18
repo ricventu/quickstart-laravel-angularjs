@@ -1,9 +1,3 @@
-let ControllerObj = {
-  templateUrl: "partials/login.html",
-  controller: "LoginController",
-  controllerAs: "$ctrl"
-}
-
 Controller.$inject = ['OAuth', '$state'];
 function Controller(OAuth, $state) {
   let $ctrl = this;
