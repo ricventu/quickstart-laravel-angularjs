@@ -8,8 +8,8 @@ let Component = {
   },
 }
 
-Controller.$inject = ['OAuth', 'OAuthToken', 'ApiService'];
-function Controller(OAuth, OAuthToken, api) {
+Controller.$inject = ['$scope','OAuth', 'OAuthToken', 'ApiService'];
+function Controller($scope, OAuth, OAuthToken, api) {
   let $ctrl = this;
   $ctrl.isAuthenticated = function() {
     return OAuth.isAuthenticated();
@@ -19,11 +19,16 @@ function Controller(OAuth, OAuthToken, api) {
     OAuthToken.removeToken();
   }
 
-  if (OAuth.isAuthenticated()) {
-    api.getUser().then(function (response) {
-      $ctrl.user = response.data;
-    });
-  }
+  $scope.$watch(OAuth.isAuthenticated, function(authenticated) {
+    if (authenticated) {
+      api.getUser().then(function (response) {
+        $ctrl.user = response.data;
+      });
+    } else {
+      $ctrl.user = {};
+    }
+  });
+  
 } 
 
 
