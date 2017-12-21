@@ -105,3 +105,12 @@ Simple web application to quickstart with [Laravel](https://laravel.com/) 5.5 an
 
     [getting started with Laravel](https://devcenter.heroku.com/articles/getting-started-with-laravel)
 
+    add heroku/nodejs build pack
+    set env variables
+
+    ```sh
+    heroku config:set APP_KEY=...
+    heroku config:set APP_LOG=errorlog
+    heroku config:set PLATFORM=heroku
+    heroku config:set DB_CONNECTION=pgsql
+    ```
