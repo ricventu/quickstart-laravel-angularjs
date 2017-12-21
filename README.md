@@ -100,3 +100,8 @@ Simple web application to quickstart with [Laravel](https://laravel.com/) 5.5 an
     ```sh
     npm run watch
     ```
+
+1. Deploy to Heroku
+
+    [getting started with Laravel](https://devcenter.heroku.com/articles/getting-started-with-laravel)
+
