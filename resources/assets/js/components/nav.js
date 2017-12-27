@@ -23,6 +23,7 @@ function Controller($scope, OAuth, OAuthToken, api) {
     if (authenticated) {
       api.getUser().then(function (response) {
         $ctrl.user = response.data;
+      }, function (response) {
       });
     } else {
       $ctrl.user = {};

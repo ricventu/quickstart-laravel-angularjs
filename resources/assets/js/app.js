@@ -43,3 +43,18 @@ app.run(['$rootScope', '$window', 'OAuth', function ($rootScope, $window, OAuth)
     return $window.location.href = '/login?error_reason=' + rejection.data.error;
   });
 }]);
+
+// register the interceptor as a service
+app.factory('myHttpInterceptor', ['$q', 'OAuthToken', function($q, OAuthToken) {
+  return {
+    'responseError': function(rejection) {
+      if (rejection.status == 401) {
+        OAuthToken.removeToken();
+      }
+      return $q.reject(rejection);
+    }
+  };
+}]);
+app.config(['$httpProvider', function($httpProvider) {
+  $httpProvider.interceptors.push('myHttpInterceptor')
+}]);
