@@ -17,7 +17,7 @@ class TrustProxies extends Middleware
     public function __construct(Repository $config)
     {
         if (getenv("PLATFORM") == 'heroku') {
-            $this->$proxies = '*';
+            $this->proxies = '*';
         }
         parent::__construct($config);
     }
