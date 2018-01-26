@@ -7,9 +7,6 @@
 
 require('./bootstrap');
 
-require('angular');
-require('@uirouter/angularjs');
-require('angular-oauth2');
 
 import appConfig from './config';
 import appRouter from './router';

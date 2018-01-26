@@ -12,13 +12,19 @@ let mix = require('laravel-mix');
  */
 
 mix.js('resources/assets/js/app.js', 'public/js')
-   .sass('resources/assets/sass/app.scss', 'public/css')
-   .copyDirectory('resources/assets/partials', 'public/partials');
-   
+.extract([ 
+  'angular','@uirouter/angularjs', 'angular-oauth2', 'angular-cookies' 
+])
+.sass('resources/assets/sass/app.scss', 'public/css')
+.copyDirectory('resources/assets/partials', 'public/partials');
 
-// Versioning / Cache Busting
+
 if (mix.inProduction()) {
+  // Versioning / Cache Busting
   mix.version();
+} else {  
+  mix.sourceMaps();
+  mix.webpackConfig({ devtool: "source-map" });
 }
 
 //Browsersync Reloading
