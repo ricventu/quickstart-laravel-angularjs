@@ -11,6 +11,7 @@ Simple web application to quickstart with [Laravel](https://laravel.com/) 5.5 an
 1. Removing the Frontend Scaffolding but keep Bootstrap
 
     `php artisan preset none`
+    
     `php artisan preset bootstrap`
 
     _note_: in package.json change "jquery": "^3.1.1" to "jquery": "^3.2"
